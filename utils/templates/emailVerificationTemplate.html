@@ -1,0 +1,70 @@
+<!-- verificationEmail.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Email Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @media only screen and (max-width:600px){
+      .container{width:100% !important;padding:16px !important;}
+      .token{font-size:20px !important;}
+    }
+
+    body {margin:0; padding:0; background:#f4f6f8; font-family:Arial, sans-serif;}
+  </style>
+</head>
+<body style="margin:0; padding:0; background:#f4f6f8; font-family:Arial, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table class="container" width="600" cellpadding="0" cellspacing="0" role="presentation" style="width:600px; max-width:600px; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(16,24,40,0.08);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="padding:24px; text-align:left;">
+              <!-- <img src="https://yourdomain.com/logo.png" alt="Your Company" width="120" style="display:block; border:0;"> -->
+               <center>
+                 <h2>NEO BANK</h2>
+               </center>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:0 24px 24px; color:#0f172a;">
+              <h1 style="margin:0 0 12px; font-size:20px; line-height:32px; color:#0f172a;">Verify your email</h1>
+
+              <p style="margin:0 0 16px; color:#475569; font-size:16px; line-height:24px;">
+                Hi {{USER_NAME}},
+              </p>
+
+              <p style="margin:0 18px 18px; color:#475569; font-size:16px; line-height:24px;">
+                Use the verification token below to confirm your email address. This code will expire in <strong>1 hour</strong>.
+              </p>
+
+              <!-- Token -->
+              <p class="token" style="margin:0 0 20px; font-size:24px; letter-spacing:2px; font-weight:700; text-align:center; color:#111827;">
+                {{TOKEN}}
+              </p>
+
+              <p style="margin:0 0 12px; color:#475569; font-size:14px; line-height:22px;">
+                If you didn’t create this account, you can safely ignore this email.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <!-- <tr>
+            <td style="padding:18px 24px; background:#f8fafc; color:#9aa4af; font-size:12px; text-align:center;">
+              <p style="margin:6px 0;">© {{YEAR}} Your Company. All rights reserved.</p>
+              <p style="margin:6px 0;">Need help? Contact <a href="mailto:support@yourdomain.com" style="color:#059669; text-decoration:underline;">support@yourdomain.com</a>.</p>
+            </td>
+          </tr> -->
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

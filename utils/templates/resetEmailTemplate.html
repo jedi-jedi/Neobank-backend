@@ -1,0 +1,98 @@
+<!-- Password Reset Email HTML -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Password Reset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Mobile-friendly adjustments (many email clients ignore, but useful when supported) */
+    @media only screen and (max-width: 600px) {
+      .container { width: 100% !important; padding: 16px !important; }
+      .btn { width: 100% !important; display: block !important; }
+      .hero { font-size: 22px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8;">
+  <!-- Preheader (hidden in email preview but readable by some clients) -->
+  <div style="display:none; max-height:0; overflow:hidden; font-size:1px; color:#ffffff; line-height:1px; opacity:0;">
+    Use this link to reset your password. This link will expire in 1 hour.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+        <table class="container" width="600" cellpadding="0" cellspacing="0" role="presentation" style="width:600px; max-width:600px; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 6px rgba(16,24,40,0.08);">
+          <!-- Header -->
+          <tr>
+            <td style="padding:24px; text-align:left; font-family:Arial, Helvetica, sans-serif;">
+              <!-- <img src="https://yourdomain.com/logo.png" alt="Company Logo" width="120" style="display:block; border:0; outline:none; text-decoration:none;"> -->
+              <center>
+                <h2>NEO BANK</h2>
+              </center>  
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:0 24px 24px; font-family:Arial, Helvetica, sans-serif; color:#0f172a;">
+              <h4 class="hero" style="margin:0 0 16px; font-size:20px; line-height:32px; color:#0f172a;">Reset your password</h4>
+              <p style="margin:0 0 16px; color:#4e6c96; font-size:16px; line-height:24px;">
+                Hi {{USER_NAME}},
+              </p>
+              <p style="margin:0 0 22px; color:#475569; font-size:16px; line-height:24px;">
+                We received a request to reset the password for your account. Click the button below to choose a new password. This link will expire in <strong>1 hour</strong>.
+              </p>
+
+              <!-- Button -->
+              <table cellpadding="0" cellspacing="0" role="presentation" style="margin:0 0 18px;">
+                <tr>
+                  <td align="center">
+                    <a href="{{RESET_URL}}" target="_blank" class="btn" style="background:#2563eb; color:#ffffff; text-decoration:none; padding:12px 22px; border-radius:8px; display:inline-block; font-weight:600; font-family:Arial, Helvetica, sans-serif;">
+                      Reset password
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Fallback link -->
+              <p style="margin:0 0 8px; color:#94a3b8; font-size:13px; line-height:20px;">
+                If the button doesn't work, copy and paste the following link into your browser:
+              </p>
+              <p style="word-break:break-all; margin:0 0 18px;">
+                <a href="{{RESET_URL}}" target="_blank" style="color:#374151; font-size:14px; text-decoration:underline;">{{RESET_URL}}</a>
+              </p>
+
+              <!-- Safety note -->
+              <p style="margin:0 0 12px; color:#475569; font-size:14px; line-height:22px;">
+                If you didn't request a password reset, you can safely ignore this email — no changes will be made to your account.
+              </p>
+
+              <!-- Support -->
+              <!-- <p style="margin:0; color:#94a3b8; font-size:13px; line-height:20px;">
+                Need help? Contact our support at <a href="mailto:support@yourdomain.com" style="color:#2563eb; text-decoration:underline;">support@yourdomain.com</a>.
+              </p> -->
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <!-- <tr>
+            <td style="padding:20px 24px; background:#f8fafc; font-family:Arial, Helvetica, sans-serif; color:#94a3b8; font-size:12px; text-align:center;">
+              <p style="margin:6px 0;">© {{YEAR}} Your Company Name. All rights reserved.</p>
+              <p style="margin:6px 0;">If you no longer want to receive these emails, you may <a href="{{UNSUBSCRIBE_URL}}" style="color:#2563eb; text-decoration:underline;">unsubscribe</a>.</p>
+            </td>
+          </tr> -->
+
+        </table>
+      </td>
+    </tr>
+    <!-- very small spacer row to keep outer background visible -->
+    <!-- <tr>
+      <td align="center" style="padding:8px 12px; font-family:Arial, Helvetica, sans-serif; color:#94a3b8; font-size:12px;">
+        Can't see the message? <a href="{{WEB_FALLBACK_URL}}" style="color:#2563eb; text-decoration:underline;">View in browser</a>.
+      </td>
+    </tr> -->
+  </table>
+</body>
+</html>

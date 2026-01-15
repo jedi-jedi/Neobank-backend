@@ -4,38 +4,50 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     userName: {
         type: String,
-        unique: [true, "this username has already been used"],
-        required: true
+        required: true,
+        unique: [ true, "Username already exist"]
     },
     firstName:{
         type: String,
-        required: true
+        required: [ true, "firstName is required"]
     },
     lastName:{
         type: String,
-        required: true
+        required: [ true, "lastName is required"]
     },
     email: {
         type: String,
-        required: true,
+        required: [ true, "Email is required"],
         unique: [true, "email already exist"]
     },
     password: {
         type: String,
-        required: true,
+        required: [ true, "Password is required"],
     },
     phone: {
         type: String,
-        required: true
+        required: [ true, "Phone number is required"]
     },
     role: {
         type: String,
-        enum: ["user", "admin"],
-        default: "user"
+        enum: ["admin", "editor", "customer"],
+        default: "customer"
     },
     emailVerified: {
         type: Boolean,
         default: false
+    },
+    resetPasswordToken: {
+        type: String
+    },
+    resetPasswordExp: {
+        type: String
+    },
+    emailVerificationToken: {
+        type: String
+    },
+    emailVerificationExp: {
+        type: String
     }
 }, { timestamps: true });
 

@@ -19,7 +19,22 @@ app.get("/api/v1", (req, res) => {
 });
 
 
+
 app.listen(PORT, ()=>{
     console.log(`The App is running on port ${PORT}`);
     
 })
+
+
+//routes
+import userRouter from "./routers/userRoute.js";
+import accountRouter from "./routers/accountRouter.js";
+import errorHandler from "./middlewares/errorHandler.js";
+
+
+app.use("/users", userRouter);
+app.use("/account", accountRouter);
+
+
+
+app.use("/{*any}", errorHandler);
